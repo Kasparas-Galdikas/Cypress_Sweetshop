@@ -7,6 +7,7 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -17,9 +18,7 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        working-directory: ./Cypress_Sweetshop
         run: npm install
 
       - name: Run Cypress tests
-        working-directory: ./Cypress_Sweetshop
         run: npx cypress run
