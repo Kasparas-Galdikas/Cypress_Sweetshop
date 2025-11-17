@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Node
@@ -17,8 +17,8 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run Cypress tests
-        run: npm test
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          install: true
+          runTests: true
